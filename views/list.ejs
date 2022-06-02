@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('partials/head', { title: 'All Hobbies' }) %>
+  <link rel="stylesheet" href="/styles/hobbies.css">
+</head>
+
+<body>
+  <%- include('partials/header') %>
+  <main id="all-hobbies">
+    <h1>All Hobbies</h1>
+    
+   <% if (!hobbies || hobbies.length === 0){ %>
+   <p> No hobbies found. </p>
+   <a class="btn" href="/new-post"> Create a new hobby</a>
+     <%} else { %>
+      <ol id="hobbies-list">
+        <div>
+          <h2 class="outin"> Outdoor </h2>
+        <% for (const hobby of hobbies) { %>
+          <% if (hobby.outdoor) { %>
+          <li>
+            <%- include('partials/hobby', { hobby: hobby}) %>
+          </li>
+            <% } %>
+          <% } %>
+          </div>
+            <div>
+              <h2 class="outin">Indoor</h2>
+            <% for (const hobby of hobbies) { %>
+          <% if (!hobby.outdoor) { %>
+          <li>
+            <%- include('partials/hobby', { hobby: hobby}) %>
+          </li>
+            <% } %>
+          <% } %>
+          </div>
+      </ol>
+      <% } %>
+  </main>
+</body>
+
+</html>

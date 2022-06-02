@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('partials/head', { title: 'Add new user' }) %>
+  <link rel="stylesheet" href="/styles/forms.css">
+</head>
+
+<body>
+  <%- include('partials/header') %>
+  <main>
+    <h1>Add a new user</h1>
+    <form action="/users" method="POST">
+      <div class="form-item">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="username" required>
+      </div>
+      <div class="form-item">
+        <label for="country">Country</label>
+        <input type="text" id="country" name="country" required>
+      </div>
+      
+      <button class="btn change">Add User</button>
+    </form>
+  </main>
+</body>
+
+</html>

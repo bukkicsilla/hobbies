@@ -1,0 +1,17 @@
+<article class="hobby-item">
+  <div>
+    <h2><%= hobby.hobby %></h2>
+    <div class="hobby-actions">
+    <!--<a class="btn" href="/hobbies/<%= hobby._id %>/edit">Edit Post</a>-->
+    <a class="btn" href="/hobbies/<%= hobby._id %>/edit">+</a>
+    <!--<a class="btn" href="/hobbies/<%= hobby._id %>">View Post</a>-->
+    <a class="btn view" href="/hobbies/<%= hobby._id %>"> &#9755;</a>
+    </div>
+  </div>
+  <div id="close">
+<form action="/hobbies/<%= hobby._id %>/delete" method="POST">
+    <!--<button class="btn btn-alt">Delete Post</button>-->
+      <button class="btn btn-alt">&times</button>
+  </form>
+  </div>
+</article>

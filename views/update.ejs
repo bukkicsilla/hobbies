@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('partials/head', { title: 'Update hobby' }) %>
+  <link rel="stylesheet" href="/styles/forms.css">
+</head>
+
+<body>
+  <%- include('partials/header') %>
+  <main>
+    <h1>Update hobby</h1>
+    <form action="/hobbies/<%= hobby._id %>/edit" method="POST">
+      <div class="form-item">
+        <label for="hobby">Hobby</label>
+        <input type="text" id="hobby" name="hobby" value="<%= hobby.hobby %>" required>
+      </div>
+      <div class="form-item">
+        <label for="content">Content</label>
+        <textarea id="content" name="content" required rows="5"><%= hobby.content %></textarea>
+      </div>
+      <div class="form-item">
+        <p> What kind of hobby? </p>
+        <div class="radio-hobby">
+          <% if (hobby.outdoor) { %>
+     <input type="radio" name="outdoorindoor" id="outdoor" value="outdoor" required checked>
+       <label for="outdoor">outdoor</label>
+       </div>
+       <div class="radio-hobby">
+      <input type="radio" name="outdoorindoor" id="indoor" value="indoor" required>
+       <label for="indoor">indoor</label>
+       </div>
+        <% } else { %>
+ <input type="radio" name="outdoorindoor" id="outdoor" value="outdoor" required>
+       <label for="outdoor">outdoor</label>
+       </div>
+       <div class="radio-hobby">
+      <input type="radio" name="outdoorindoor" id="indoor" value="indoor" required checked>
+       <label for="indoor">indoor</label>
+       </div>
+
+        <% } %>  
+      </div>
+      <button class="btn change">Update Post</button>
+    </form>
+  </main>
+</body>
+
+</html>

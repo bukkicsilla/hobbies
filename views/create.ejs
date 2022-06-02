@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('partials/head', { title: 'Add new hobby' }) %>
+  <link rel="stylesheet" href="/styles/forms.css">
+</head>
+
+<body>
+  <%- include('partials/header') %>
+  <main>
+    <h1>Add a new hobby</h1>
+    <form action="/hobbies" method="POST">
+      <div class="form-item">
+        <label for="hobby">Hobby</label>
+        <input type="text" id="hobby" name="hobby" required>
+      </div>
+      <div class="form-item">
+        <label for="content">Content</label>
+        <textarea id="content" name="content" required rows="5"></textarea>
+      </div>
+      <div class="form-item">
+        <label for="user">Select User</label>
+        <select id="user" name="user">
+          <% for (const user of users) { %>
+          <option value="<%= user._id %>"> <%= user.name %></option>
+          <% } %>
+        </select>
+      </div>
+      <div class="form-item">
+        <p> What kind of hobby? </p>
+        <div class="radio-hobby">
+     <input type="radio" name="outdoorindoor" id="outdoor" value="outdoor" required>
+       <label for="outdoor">outdoor</label>
+       </div>
+       <div class="radio-hobby">
+      <input type="radio" name="outdoorindoor" id="indoor" value="indoor" required>
+       <label for="indoor">indoor</label>
+       </div>
+      </div>
+      <button class="btn change">Add Hobby</button>
+    </form>
+  </main>
+</body>
+
+</html>

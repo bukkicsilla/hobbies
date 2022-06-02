@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include('partials/head', { title: 'Hobby' }) %>
+  <link rel="stylesheet" href="/styles/hobbies.css">
+</head>
+
+<body>
+  <%- include('partials/header') %>
+  <main id="hobby-detail">
+    <h1><%= hobby.hobby %></h1>
+    <section id="hobby-user">
+      <address>
+        <p> <%= hobby.user.name %></p>
+        <p> <%= hobby.user.country %></p>
+        </address> 
+    </section>
+    <hr>
+    <section>
+      <p id="content"><%= hobby.content %></p>
+    </section>
+  </main>
+</body>
+
+</html>

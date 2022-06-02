@@ -1,0 +1,172 @@
+body{
+  background-color: lightblue;
+}
+html {
+  font-family: 'Red Hat Mono', monospace;
+  color: #673147;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  width: 80%;
+  margin: 3rem auto;
+  //border: 1px solid blue;
+}
+
+a {
+  text-decoration: none;
+  color: #D02C8F;
+}
+
+a:hover,
+a:active {
+  color: lavender;
+  color: white;
+}
+
+ul, ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+.btn {
+  cursor: pointer;
+  font: inherit;
+  font-size: 4rem;
+  background-color: #EDC100;
+  border: 1px solid #EDC100;
+  color: #D02C8F;
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+}
+
+.btn:hover,
+.btn:active {
+  //background-color: #A6C871;
+  //border-color: #A6C871;
+  color: lavender;
+  color: white;
+}
+.btn.view{
+  font-size: 3.5rem;
+}
+.btn.btn-alt {
+  background-color: transparent; 
+  border-color: transparent;
+  color: #D02C8F;
+  color: #673147;
+  font-size: 1.4rem;
+  font-weight: bold;
+  //border: 1px solid blue;
+  margin-top: -1.5rem;
+  margin-left: -1.5rem;
+}
+
+.btn.btn-alt:hover,
+.btn.btn-alt:active {
+  //background-color: #A6C871;
+  color: white;
+}
+
+.btn.change{
+  background-color: #FBFDC6;
+  font-size: inherit;
+}
+.btn.change:hover, .btn.change:active{
+  background-color: #A6C871;
+  color: white;
+}
+#header {
+  position: sticky;
+  left: 0;
+  top: 0;
+  padding: 2rem 10%;
+  background-color: #D02C8F;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#logo a {
+  font-size: 4rem;
+  font-weight: bold;
+  font-family: 'Red Hat Mono', monospace;
+}
+/*#logo a:hover{
+  color: #EDC100;
+}*/
+
+#header ul {
+  display: flex;
+}
+
+#header li {
+  margin-left: 2rem;
+}
+
+#header nav a {
+  color: lavender;
+  color: white;
+  font-size: 1.25rem;
+}
+
+#header nav a:hover,
+#header nav a:active {
+  color: #EDC100;
+}
+
+.btn-create{
+  font: inherit;
+  font-size: 3rem;
+  font-weight: bold;
+  background-color: transparent;
+  color: white;
+  padding: 0.1rem 0.2rem;
+  border-radius: 20px;
+  border-color: transparent;
+  cursor: pointer;
+}
+
+img{
+  width: 50px;
+  border-radius: 42px;
+}
+
+#newhobby, #newuser, #logo {
+  position: relative;
+  //border-bottom: 1px dotted black;
+}
+#logo:before{
+  content: attr(logo-hover);
+}
+#newhobby:before{
+  content: attr(hobby-hover);
+}
+#newuser:before{
+  content: attr(user-hover);
+}
+#newhobby:before, #newuser:before, #logo:before {
+  visibility: hidden;
+  opacity: 0;
+  font-size: 1rem;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px 0;
+  transition: opacity 1s ease-in-out;
+
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 86%;
+}
+
+#newhobby:hover:before, #newuser:hover:before, #logo:hover:before {
+  opacity: 1;
+  visibility: visible;
+}
